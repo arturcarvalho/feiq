@@ -1,29 +1,11 @@
 import rehypeHighlight from "rehype-highlight";
-// import javascript from "highlight.js/lib/languages/javascript";
-
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-// }
-
-// module.exports = nextConfig
-
 import mdx from "@next/mdx";
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
-    // loader: "@mdx-js/loader",
     remarkPlugins: [],
-    rehypePlugins: [
-      rehypeHighlight,
-      // rehypeHighlight({
-      //   languages: {
-      //     // requires are needed, imports don't reduce the bundle size.
-      //     javascript,
-      //   },
-      // }),
-    ],
+    rehypePlugins: [rehypeHighlight],
     // If you use `MDXProvider`, uncomment the following line.
     providerImportSource: "@mdx-js/react",
   },
