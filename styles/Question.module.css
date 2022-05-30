@@ -1,0 +1,16 @@
+.question {
+  --padding: 24px;
+  background-color: var(--white);
+  margin-left: calc(var(--padding) * -1);
+  margin-right: calc(var(--padding) * -1);
+  padding: 8px var(--padding);
+  padding-bottom: 0;
+  border: 1px solid var(--gray-200);
+}
+
+.answer {
+  background-color: var(--sky-50);
+  cursor: pointer;
+  padding: 24px;
+  margin: 0 -24px;
+}

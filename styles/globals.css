@@ -1,16 +1,62 @@
+:root {
+  --white: #fff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+  --sky-800: #075985;
+  --sky-900: #0c4a6e;
+}
+
 html,
 body {
+  background: var(--gray-50);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline transparent;
+  transition: 0.25s ease-in-out;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+.max-width-container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+.max-width-container.main {
+  padding: 50px 30px;
+}
+
+p {
+  line-height: 1.6;
 }
