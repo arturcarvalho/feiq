@@ -2,11 +2,81 @@ import { Question, Title, Answer } from "../components/Question";
 
 # Nothing to see here
 
+## Does it compile?
+
 <Question>
-  <Title>hello</Title> 
+  <Title>Does it compile?</Title> 
   
-  ```js 
-  const x = 0; 
+  ```ts
+  let age: number = 30;
+  age = NaN;
   ```
-  <Answer>42</Answer>
+
+  <Answer>
+    Yes, it compiles. NaN is a number in JavaScript.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Does it compile?</Title> 
+  
+  ```ts
+  const tuple3: [number, number, number] = [3, 4, 5]
+  tuple3.push(6)
+  ```
+
+  <Answer>
+   Yes, it compiles. Tuples are regular array at runtime.
+  </Answer>
+</Question>
+
+
+
+<Question>
+  <Title>Does it compile? interface vs interface</Title> 
+  
+  ```ts
+  interface Color {
+    red: number
+    green: number
+    blue: number
+  }
+  
+  interface Color {
+    alpha: number
+  }
+  ```
+  <Answer>
+   Yes, the interfaces merge. A color variable that complies with the interface Color will have access to the 4 properties.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Does it compile? interface vs type</Title> 
+  
+  ```ts
+  type Color = {
+    red: number
+    green: number
+    blue: number
+  }
+  
+  interface Color {
+    alpha: number
+  }
+  ```
+  <Answer>
+   No, because there's a duplicate identifier `Color`.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Does it compile?</Title> 
+  
+  ```ts
+  ```
+
+  <Answer>
+   
+  </Answer>
 </Question>

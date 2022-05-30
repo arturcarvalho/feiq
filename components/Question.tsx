@@ -11,8 +11,8 @@ export function Title({ children }: Props) {
 export function Answer({ children }: Props) {
   return (
     <details className={styles.answer}>
-      {children}
-      <summary>Answer</summary>
+      <div className={styles.body}>{children}</div>
+      <summary className={styles.summary}>Answer</summary>
     </details>
   );
 }
