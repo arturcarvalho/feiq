@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Curated list of front-end interview questions
+          Open Source list of front-end interview questions
         </p>
 
         <div className={styles.grid}>
