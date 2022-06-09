@@ -15,7 +15,9 @@
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "rehype-highlight": "^5.0.2"
+    "rehype-highlight": "^5.0.2",
+    "remark-slug": "^7.0.1",
+    "remark-toc": "^8.0.1"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
