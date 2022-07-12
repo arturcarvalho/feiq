@@ -1,5 +1,5 @@
 import { Question, Title, Answer } from "../components/Question";
-import PageLayout from "../layouts/PageLayout";
+// import PageLayout from "../layouts/PageLayout";
 
 # TypeScript
 
@@ -12,13 +12,8 @@ Based on [TypeScript documentation](https://www.typescriptlang.org) and [Mike No
 ## Variables and values
 
 <Question>
-  <Title>What are the types of the variable x and y?</Title>  
-  
-  ```ts 
-  let x = "hi";
-  const y = "hi" 
-  ```
-  
+  <Title>What are the types of the variable x and y?</Title>
+  ```ts let x = "hi" const y = "hi" ```
   <Answer>
     x is of type string and y is "hi". This happens because `const` can't change
     so the only value possible is "hi". [It's a literal
@@ -41,7 +36,6 @@ n = NaN;
 
 <Question>
   <Title>Literal type: Will this compile?</Title>
-
 ```ts
 let a = 30;
 function func(num: 30) {} // 👀
@@ -93,7 +87,6 @@ Interfaces and types work the same way regarding optional properties.
 
 <Question>
 <Title>Types: Will they merge?</Title>
-
 ```ts
 type Boat = {
   color: string;
@@ -103,7 +96,7 @@ type Boat {
 engine: boolean;
 }
 
-```
+````
 
   <Answer>
    No, types don't merge. This causes a `duplicate identifier` error.
@@ -119,7 +112,7 @@ type Boat = {
 };
 
 let b: Boat = {};
-```
+````
 
   <Answer>
    No, the `Boat` object needs to always conform to the `Boat` type. If you need to partially build an object, you can use the utility `Partial` and then use a type guard to make sure the object is completely built.
@@ -820,4 +813,3 @@ function f(n: number) {
 </Answer>
 </Question>
 
-export default ({ children }) => <PageLayout>{children}</PageLayout>;

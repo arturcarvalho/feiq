@@ -1,13 +1,12 @@
 import rehypeHighlight from "rehype-highlight";
-import remarkToc from "remark-toc";
-import remarkSlug from "remark-slug";
+import rehypeSlug from "rehype-slug";
 import mdx from "@next/mdx";
 
 const withMDX = mdx({
     extension: /\.mdx?$/,
     options: {
-        remarkPlugins: [remarkSlug, remarkToc],
-        rehypePlugins: [rehypeHighlight],
+        remarkPlugins: [],
+        rehypePlugins: [rehypeHighlight, rehypeSlug],
         // If you use `MDXProvider`, uncomment the following line.
         providerImportSource: "@mdx-js/react",
     },

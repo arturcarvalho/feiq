@@ -1,0 +1,48 @@
+.cols {
+    /* background-color: red; */
+    display: flex;
+}
+
+
+/* TOC */
+
+.left {
+    flex: 1;
+}
+
+.right {
+    position: sticky;
+    top: 24px;
+    bottom: 24px;
+    padding-left: 16px;
+    /* How far down the page you want your ToC to live */
+    /* Give table of contents a scrollbar */
+    max-height: calc(100vh - 24px);
+    overflow: auto;
+}
+
+.right li,
+.right a {
+    color: var(--sky-500);
+}
+
+.right li:hover,
+.right a:hover {
+    color: var(--sky-700);
+}
+
+.right a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.right .active,
+.right .active a {
+    color: var(--sky-800);
+}
+
+@media only screen and (max-width: 960px) {
+    .right {
+        display: none;
+    }
+}

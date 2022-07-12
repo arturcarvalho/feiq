@@ -60,3 +60,11 @@ a:hover {
 p {
     line-height: 1.6;
 }
+
+
+/* improve scroll on TOC */
+
+h2,
+h3 {
+    scroll-margin-top: 16px;
+}

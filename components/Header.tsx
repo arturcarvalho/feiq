@@ -10,16 +10,10 @@ const Header = () => {
         </h2>
         <ul>
           <li>
-            <Link href="/javascript">JavaScript</Link>
+            <Link href="/javascript">JavaScript (soon)</Link>
           </li>
           <li>
             <Link href="/typescript">TypeScript</Link>
-          </li>
-          <li>
-            <Link href="/react">React</Link>
-          </li>
-          <li>
-            <Link href="/css-html">CSS & HTML</Link>
           </li>
         </ul>
       </div>
