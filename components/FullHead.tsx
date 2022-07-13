@@ -17,7 +17,7 @@ function FullHead(fields: HeadFields) {
       {/* cant put the lang here, putting on _document.js */}
       {/* https://github.com/vercel/next.js/issues/20924 */}
       {/* <html lang="en" /> */}
-      <link rel="icon" href="/logo.svg" />
+      <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
 
       <meta name="description" content={description} />
