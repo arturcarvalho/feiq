@@ -9,9 +9,9 @@ const Header = () => {
           <Link href="/">Home</Link>
         </h2>
         <ul>
-          <li>
-            <Link href="/javascript">JavaScript (soon)</Link>
-          </li>
+          {/* <li>
+            <Link href="/javascript">JavaScript</Link>
+          </li> */}
           <li>
             <Link href="/typescript">TypeScript</Link>
           </li>

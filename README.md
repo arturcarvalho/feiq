@@ -22,8 +22,11 @@ Add it to `markdown.json` even if it's MDX.
   }
 ````
 
+# Attention
+- Careful with formatting mdx files. Sometimes it completely destroy the result.
+
 # TODO
 
-- Refactor PageLayout (dont rename to MDXLayout, I think there's some kind of conflict with another MDXLayout)
+- Refactor PageLayout
 - Generate headings on server side
 - Get rid of `any`s
