@@ -7,7 +7,12 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Front-End Interview Questions</h1>
 
-        <p className={styles.description}>Open Source front-end flash cards</p>
+        <p className={styles.description}>
+          {/* same text as <FullHead> description */}
+          Practice TypeScript with flash cards. <br />
+          It&apos;s open source, so you can help us writing some flash cards in
+          MDX!
+        </p>
 
         <div className={styles.grid}>
           <a href="/typescript" className={styles.card}>

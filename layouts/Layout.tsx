@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
         // socialImage="index2.png"
         title={"FEIQ: Front-End Interview Questions"}
         description={
-          "Front-End Interview Questions. TypeScript, JavaScript, React"
+          "Practice TypeScript with flash cards. It's open source, so you can help us writing some flash cards in MDX!"
         }
         url="https://www.feiq.org"
       />
