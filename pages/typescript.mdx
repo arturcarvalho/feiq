@@ -441,7 +441,6 @@ car; // A
   </Answer>
 </Question>
 
-## XXX
 <Question>
   <Title>type function: Replace comment A so the code compiles</Title>
 
@@ -454,18 +453,14 @@ const add: TwoNumsFn = function (x, y) {
 
 const sub: TwoNumsFn = (a, b) => a - b
   ```
-  <Answer>
-   The solution: `(x: number, y: number) => number`
-
-   Full type:
+  <Answer>   
    ```ts
-   type TwoNumsFn = (x: number, y: number) => number
+   (x: number, y: number) => number
    ```
 
 
   </Answer>
 </Question>
-## XXX
 
 ## Bottom values: null, undefined and void
 
@@ -506,7 +501,74 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
----
+<Question>
+  <Title>Can a function typed to return only undefined compile?</Title>
+
+  ```ts
+    function f(n: number): undefined {      
+      return undefined;
+    }
+  ```
+  <Answer>
+    Yes. If you explicitly return `undefined`.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>What should you write instead of __ so that you can ignore the return value of a function?</Title>
+
+  ```ts
+    function f():___ {
+    }
+  ```
+  <Answer>
+    The keyword `void`. 
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Does the code compile for a function that has no return values but has undefined as return type?</Title>
+
+  ```ts
+  function f(): undefined {
+      console.log(1)
+  }
+
+  console.log(f()) // Logs "undefined"
+  ```
+  <Answer>
+    No, the code won't compile.
+
+    Even though functions that don't have return statements return `undefined`, 
+    when we say the function is going to return `undefined` there needs to be somewhere an explicit `undefined` return.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>What is the return type when nothing is returned and the function has no return type?</Title>
+
+  ```ts
+ function f() {}
+  const x = f()
+  ```
+  <Answer>
+    It's `void`.
+  </Answer>
+</Question>
+
+## Classes
+## S XXX
+<Question>
+  <Title></Title>
+
+  ```ts
+ 
+  ```
+  <Answer>
+
+  </Answer>
+</Question>
+## E XXX
 
 <Question>
   <Title>Are excess properties checked?</Title>
