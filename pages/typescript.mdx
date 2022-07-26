@@ -3,7 +3,7 @@ import PageLayout from "../layouts/PageLayout";
 
 # TypeScript
 
-Based on [TypeScript documentation](https://www.typescriptlang.org) and [Mike North's courses](https://www.typescript-training.com/).
+
 
 - check titles are easily skimmable on TOC
 - check correctness and re-read
@@ -86,6 +86,23 @@ By default, before initializing a property it has the undefined value, so there'
 
 Interfaces and types work the same way regarding optional properties.
 
+  </Answer>
+</Question>
+
+## Arrays
+
+<Question>
+  <Title>Push vs assign: Does it show errors on line A or B?</Title>
+
+```ts
+let tuple: [number, number] = [1, 2];
+tuple.push(3); // A
+tuple = [1, 2, 3]; // B
+```
+
+  <Answer>
+   - Line A: No errors. Because tuples are regular arrays at runtime.
+   - Line B: Errors. Because the variable tuple only accepts tuples with 2 numbers.
   </Answer>
 </Question>
 
@@ -183,7 +200,7 @@ const [a] = f();
   </Answer>
 </Question>
 
-## Intersection types
+## Intersection types and Interfaces
 
 <Question>
 <Title>Intersecting types of objects: Does it compile?</Title>
@@ -218,6 +235,78 @@ c = "hi";
     No, it doesn't compile.
 
     `c` is of type `never` because something cannot work as type `string` and type `null`. The types are in conflict.
+
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Will the interfaces merge?</Title>
+
+```ts
+interface Boat {
+  color: string;
+}
+
+interface Boat {
+  engine: boolean;
+}
+const b = { color: "white", engined: true };
+```
+
+<Answer>
+ Yes. The interfaces merge and there are no errors. The variable `b` complies with the interface `Boat`.
+</Answer>
+</Question>
+
+<Question>
+<Title>Does it compile? interface vs type</Title>
+
+```ts
+type Boat = {
+  color: string;
+};
+
+interface Boat {
+  engine: boolean;
+}
+```
+
+  <Answer>
+   No, because there's a duplicate identifier `Boat`. And you can't merge interfaces with types.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Types vs Interfaces: Will line A and/or B compile?</Title>
+
+  ```ts
+  type AType = {
+    prop: string;
+  }
+
+  type BType = {
+    prop: number;
+  }
+
+  type CType = AType & BType; // A
+  type MyProp = CType['prop']
+
+  interface AInterface {
+    prop: string;
+  }
+
+  interface BInterface {
+    prop: number;
+  }
+
+  interface CInterface extends AInterface, BInterface { // B
+  }
+  ```
+  <Answer>
+    Line `A` compiles, but line `B` doesn't compile.
+
+    Currently, extending interfaces catches more conflicts than type intersections. 
+    Read more about it [here](https://twitter.com/alexdotjs/status/1489897905481781249).
 
   </Answer>
 </Question>
@@ -423,7 +512,31 @@ car; // A
   </Answer>
 </Question>
 
+<Question>
+  <Title>Can you assign a less strict value to a variable?</Title>
 
+```ts
+function g(n: number | null) {
+  const num: number = n;
+}
+```
+
+<Answer>
+  No, the code won't compile. Because you can't assign a value that is less strict. And in this case the value `n` accepts `number` or `null` while `num` only accepts numbers.
+
+But you can assign a more strict value to a less strict variable:
+
+```ts
+function f(n: number) {
+  const num: number | null = n;
+}
+```
+
+```js
+ export default ({ children }) => <PageLayout>{children}</PageLayout>;
+```
+</Answer>
+</Question>
 
 ## Functions
 
@@ -557,131 +670,6 @@ The `x!` will suppress any errors even if the class field was not initialized.
 </Question>
 
 ## Classes
-## S XXX
-<Question>
-  <Title></Title>
-
-  ```ts
- 
-  ```
-  <Answer>
-
-  </Answer>
-</Question>
-## E XXX
-
-<Question>
-  <Title>Are excess properties checked?</Title>
-
-```ts
-interface Boat {
-  color: string;
-}
-
-function logBoat(mcBoat: Boat) {
-  console.log(mcBoat);
-}
-
-logBoat({ color: "white", engine: false });
-```
-
-<Answer>
- Excess properties are checked for object literals, so the code above **won't compile**.
- The reason is `logBoat` is receiving an object literal with a field (`engine`) that will never be used.
-
-It would work if the variable could be used for something else. This works:
-
-```ts
-interface Boat {
-  color: string;
-}
-
-function logBoat(mcBoat: Boat) {
-  console.log(mcBoat);
-}
-
-const reusableVar = { color: "white", engine: false };
-
-// This is valid because reusableVar can be used in some other context
-logBoat(reusableVar);
-```
-
-</Answer>
-</Question>
-
-XXX GO BACK TO objects array tuples index signatures after the | and &
-
-## Does it compile?
-
-<Question>
-  <Title>Does it show errors on line A or B?</Title>
-
-```ts
-let tuple: [number, number] = [1, 2];
-tuple.push(3); // A
-tuple = [1, 2, 3]; // B
-```
-
-  <Answer>
-   - Line A: No errors. Because tuples are regular arrays at runtime.
-   - Line B: Errors. Because the variable tuple only accepts tuples with 2 numbers.
-  </Answer>
-</Question>
-
-<Question>
-  <Title>Will the interfaces merge?</Title>
-
-```ts
-interface Boat {
-  color: string;
-}
-
-interface Boat {
-  engine: boolean;
-}
-const b = { color: "white", engined: true };
-```
-
-<Answer>
- Yes. The interfaces merge and there are no errors. The variable `b` complies with the interface `Boat`.
-</Answer>
-</Question>
-
-<Question>
-<Title>Does it compile? interface vs type</Title>
-
-```ts
-type Boat = {
-  color: string;
-};
-
-interface Boat {
-  engine: boolean;
-}
-```
-
-  <Answer>
-   No, because there's a duplicate identifier `Boat`. And you can't merge interfaces with types.
-  </Answer>
-</Question>
-
-<Question>
-  <Title>Will it show errors?</Title> 
-  
-  ```ts
-    class Boat {
-      color: string
-      engine: boolean
-      constructor(color: string) {
-        this.color = color
-      }
-    }
-  ```
-  <Answer>
-   No, this doesn't compile. Because the `engine` property has no initializer and it's not defined on the constructor.
-  </Answer>
-</Question>
-
 <Question>
   <Title>Will the class with Promise on constructor show errors?</Title> 
   
@@ -814,38 +802,6 @@ p.engine;
 </Question>
 
 <Question>
-  <Title>Does this compile?</Title>
-
-```ts
-type Boat = {
-  engines: string[];
-};
-
-function findEngine(engine: string) {
-  return this.engines.indexOf(engine) !== -1;
-}
-```
-
-  <Answer>
-   No, it won't compile.
-
-There is an assumption that `this` has an `engines` field. But `this` could be anything, so we cannot assume that.
-We can fix it by defining the type of `this`:
-
-```ts
-type Boat = {
-  engines: string[];
-};
-
-function findEngine(this: Boat, engine: string) {
-  return this.engines.indexOf(engine) !== -1;
-}
-```
-
-  </Answer>
-</Question>
-
-<Question>
   <Title>Will the same private field compile?</Title>
 
 ```ts
@@ -899,29 +855,102 @@ class Titanic extends Boat {
 </Question>
 
 <Question>
-  <Title>Can you assign a less strict value to a variable?</Title>
+  <Title>Property not initialized: Does it compile?</Title> 
+  
+  ```ts
+    class Boat {
+      color: string
+      engine: boolean
+      constructor(color: string) {
+        this.color = color
+      }
+    }
+  ```
+  <Answer>
+   No, this doesn't compile. Because the `engine` property has no initializer and it's not defined on the constructor.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Function calling this: Does it compile?</Title>
 
 ```ts
-function g(n: number | null) {
-  const num: number = n;
+type Boat = {
+  engines: string[];
+};
+
+function findEngine(engine: string) {
+  return this.engines.indexOf(engine) !== -1;
 }
+```
+
+  <Answer>
+   No, it won't compile.
+
+There is an assumption that `this` has an `engines` field. But `this` could be anything, so we cannot assume that.
+We can fix it by defining the type of `this`:
+
+```ts
+  type Boat = {
+    engines: string[];
+  };
+
+  function findEngine(this: Boat, engine: string) {
+    return this.engines.indexOf(engine) !== -1;
+  }
+```
+
+  </Answer>
+</Question>
+
+## S XXX
+
+## E XXX
+
+<Question>
+  <Title>Are excess properties checked?</Title>
+
+```ts
+  interface Boat {
+    color: string;
+  }
+
+  function logBoat(mcBoat: Boat) {
+    console.log(mcBoat);
+  }
+
+  logBoat({ color: "white", engine: false });
 ```
 
 <Answer>
-  No, the code won't compile. Because you can't assign a value that is less strict. And in this case the value `n` accepts `number` or `null` while `num` only accepts numbers.
+ The code above **won't compile**.
+ 
+ Excess properties are checked for object literals.
+ The reason is `logBoat` is receiving an object literal with a field (`engine`) that will never be used.
 
-But you can assign a more strict value to a less strict variable:
+It would work if the variable could be used for something else. This works:
 
 ```ts
-function f(n: number) {
-  const num: number | null = n;
+interface Boat {
+  color: string;
 }
+
+function logBoat(mcBoat: Boat) {
+  console.log(mcBoat);
+}
+
+const reusableVar = { color: "white", engine: false };
+
+// This is valid because reusableVar can be used in some other context
+logBoat(reusableVar);
 ```
 
-```js
- export default ({ children }) => <PageLayout>{children}</PageLayout>;
-```
 </Answer>
 </Question>
+
+## Learn more
+
+If you want to learn more, visit [TypeScript documentation](https://www.typescriptlang.org) 
+and [Mike North's courses](https://www.typescript-training.com/).
 
 export default ({ children }) => <PageLayout>{children}</PageLayout>;
