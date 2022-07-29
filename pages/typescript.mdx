@@ -89,6 +89,53 @@ Interfaces and types work the same way regarding optional properties.
   </Answer>
 </Question>
 
+<Question>
+  <Title>Index signatures: Will it compile?</Title>
+ 
+  ```ts
+  type Boat = { size: number }
+  type Marina = { [k: string]: Boat }
+
+  let marina: Marina = {}
+  marina.titanic.size = 300; // Notice property titanic was not defined
+  marina.mcBoat.size = 30;
+  ```
+  <Answer>
+    Yes, it will compile.
+
+    But if you run the code, it will throw an error because `titanic` is not defined.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>What is the type of mixedArray?</Title>
+
+  ```ts
+  const mixedArray = [1, "Bob"]
+  ```
+  <Answer>
+    The type is `(number | string)[]`.
+  </Answer>
+</Question>
+
+## SDRAFT
+
+<Question>
+  <Title>Defining array types: Which lines don't compile?</Title>
+
+  ```ts
+  let arr1:string[] // A
+  let arr2:[string] // B
+  let arr3:Array<string> // C
+  ```
+  <Answer>
+    Line `B` won't compile.
+
+    This is not a valid syntax to define arrays. Notice line `C` will show `string[]` type and not `Array<string>`.
+  </Answer>
+</Question>
+## EDRAFT
+
 ## Arrays
 
 <Question>
@@ -903,9 +950,106 @@ We can fix it by defining the type of `this`:
   </Answer>
 </Question>
 
-## S XXX
+<Question>
+  <Title>Access modifiers: Will A, B, C and D compile?</Title>
 
-## E XXX
+  ```ts
+  class Boat {
+      f1: number;
+      public f2: number;
+      protected f3: number;
+      private f4: number;
+
+      constructor(f1: number, f2: number, f3:number, f4: number) {
+          this.f1 = f1;
+          this.f2 = f2;
+          this.f3 = f3;
+          this.f4 = f4;
+      }
+  }
+
+  const b = new Boat(1,1,1,1)
+  b.f1 // A
+  b.f2 // B
+  b.f3 // C
+  b.f4 // D
+  ```
+  <Answer>
+    C and D won't compile. 
+    A compiles because `public` is the default access modifier.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Access modifiers: Will A, B, C and D compile?</Title>
+
+  ```ts
+  class Boat {
+      constructor(f1: number, public f2: number, protected f3: number, private f4: number) { }
+  }
+
+  const b = new Boat(1, 1, 1, 1)
+  b.f1 // A
+  b.f2 // B
+  b.f3 // C
+  b.f4 // D
+  ```
+  <Answer>
+    A, C and D won't compile. 
+    A won't compile because it's being parsed as a typical constructor parameter. 
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Access modifiers: Which lines won't compile?</Title>
+
+  ```ts
+  class Boat {
+      constructor(public f1: number, protected f2: number, private f3: number) { }
+  }
+
+  class Titanic extends Boat {
+      f() {
+          this.f1; // A
+          this.f2; // B
+          this.f3; // C
+      }
+  }
+
+  const t = new Titanic(1, 1, 1) 
+
+  t.f1 // D
+  t.f2 // E
+  t.f3 // F
+  ```
+  <Answer>
+    The lines C, E and F.
+
+    The `protected` field is only accessible from within the subclasses of `Boat`.
+  </Answer>
+</Question>
+
+
+<Question>
+  <Title>readonly field: Will there be type errors on A or B?</Title>
+
+  ```ts
+  class Boat {
+      readonly f1: number;
+      constructor(f1: number) {
+          this.f1 = f1; // A
+      }
+  }
+
+  const b = new Boat(1)
+  b.f1 = 2 // B
+  ```
+  <Answer>
+    There will be an error on B.
+
+    Readonly fields can be initialized on the constructor. Remember, there won't be any runtime check.
+  </Answer>
+</Question>
 
 <Question>
   <Title>Are excess properties checked?</Title>
