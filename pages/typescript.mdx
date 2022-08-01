@@ -3,12 +3,6 @@ import PageLayout from "../layouts/PageLayout";
 
 # TypeScript
 
-
-
-- check titles are easily skimmable on TOC
-- check correctness and re-read
-- check TOC is clickable
-
 ## Variables and values
 
 <Question>
@@ -114,11 +108,11 @@ Interfaces and types work the same way regarding optional properties.
   const mixedArray = [1, "Bob"]
   ```
   <Answer>
-    The type is `(number | string)[]`.
+    The type is `(number | string)[]`. 
+
+    TypeScript can infer the possible types from the contents of the array.
   </Answer>
 </Question>
-
-## SDRAFT
 
 <Question>
   <Title>Defining array types: Which lines don't compile?</Title>
@@ -134,7 +128,20 @@ Interfaces and types work the same way regarding optional properties.
     This is not a valid syntax to define arrays. Notice line `C` will show `string[]` type and not `Array<string>`.
   </Answer>
 </Question>
-## EDRAFT
+
+<Question>
+  <Title>Generic array: Which word should we put instead of ___?</Title>
+
+  ```ts
+  const arr: ___<number> = []
+  arr.push(1)
+  ```
+  <Answer>
+  The word to use is `Array`.
+
+  Consider that `Array<some_type>` is the same as `some_type[]`. 
+  </Answer>
+</Question>
 
 ## Arrays
 
@@ -148,6 +155,8 @@ tuple = [1, 2, 3]; // B
 ```
 
   <Answer>
+  It shows errors on line B.
+
    - Line A: No errors. Because tuples are regular arrays at runtime.
    - Line B: Errors. Because the variable tuple only accepts tuples with 2 numbers.
   </Answer>
@@ -1091,6 +1100,12 @@ logBoat(reusableVar);
 
 </Answer>
 </Question>
+
+## SDRAFT
+
+
+## EDRAFT
+
 
 ## Learn more
 

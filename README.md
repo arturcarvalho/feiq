@@ -2,7 +2,7 @@
 
 Add it to `markdown.json` even if it's MDX.
 
-````json
+```json
   "FEIQ question": {
     "prefix": "feiq",
     "body": [
@@ -20,10 +20,13 @@ Add it to `markdown.json` even if it's MDX.
     ],
     "description": "Add FEIQ question"
   }
-````
+```
 
 # Attention
 - Careful with formatting mdx files. Sometimes it completely destroy the result.
+- Check titles are easily skimmed on TOC
+- Check correctness and re-read
+- Check TOC is clickable
 
 # TODO
 
