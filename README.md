@@ -23,10 +23,10 @@ Add it to `markdown.json` even if it's MDX.
 ```
 
 # Attention
-- Careful with formatting mdx files. Sometimes it completely destroy the result.
 - Check titles are easily skimmed on TOC
 - Check correctness and re-read
 - Check TOC is clickable
+- Careful with formatting mdx files. Sometimes it completely destroy the result. That's why they are ignored (check .prettierignore)
 
 # TODO
 
