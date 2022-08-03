@@ -1101,11 +1101,32 @@ logBoat(reusableVar);
 </Answer>
 </Question>
 
+## Generics
+
 ## SDRAFT
 
 
 ## EDRAFT
 
+
+## Configuration
+
+<Question>
+  <Title>Will the code compile if strictNullChecks is set to false?</Title>
+
+  ```ts
+  // strictNullChecks = false
+  let x: boolean = null;
+  let y: boolean = undefined;
+  ```
+  <Answer>
+  The code will compile. 
+
+  `null` and `undefined` are considered a subtype of any type when `--stricthNullChecks` is set to false.
+  This means type `T` and `T | undefined` or `T | null` are [considered synonymous](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html).
+
+  </Answer>
+</Question>
 
 ## Learn more
 
