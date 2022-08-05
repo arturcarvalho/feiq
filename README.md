@@ -1,6 +1,6 @@
 # VS code snippet
 
-Add it to `markdown.json` even if it's MDX.
+Add it to `markdown.json` even if it's MDX. If it doesn't trigger automatically try `ctrl+space`.
 
 ```json
   "FEIQ question": {

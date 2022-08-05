@@ -779,7 +779,9 @@ The `x!` will suppress any errors even if the class field was not initialized.
   ```
 
   <Answer>
-   Yes, it will work without errors. You can constrain a type but you can't relax it. The `color` in `Titanic` can only be the string "white".
+   Yes, it will work without errors. 
+   
+   You can constrain a type but you can't relax it. The `color` in `Titanic` can only be the string "white".
   </Answer>
 </Question>
 
@@ -1101,9 +1103,51 @@ logBoat(reusableVar);
 </Answer>
 </Question>
 
+<Question>
+  <Title>Simple generic: What should you put on ___ to make the code work?</Title>
+
+  ```ts
+  function f___(arr: T[]): T {
+      return arr[0];
+  }
+  const first = f([1, 2])
+  ```
+  <Answer>
+  You should put `<T>`.
+
+  The function look like this:
+  ```ts
+    function f<T>(arr: T[]): T {
+      return arr[0];
+  }
+  ```
+  </Answer>
+</Question>
+
 ## Generics
 
+
 ## SDRAFT
+
+<Question>
+  <Title>Multiple generic types: What is the type of x?</Title>
+
+  ```ts
+  interface Small<T, U> {
+      f1: T;
+      f2: U;
+  }
+
+  function f<T, U>(x: T, y: U): Small<T, U> {
+      return { f1: x, f2: y }
+  }
+
+  const x = f(1, "a")
+  ```
+  <Answer>
+  The type of `x` is `Small<number, string>`.
+  </Answer>
+</Question>
 
 
 ## EDRAFT
