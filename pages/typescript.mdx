@@ -101,16 +101,22 @@ Interfaces and types work the same way regarding optional properties.
   </Answer>
 </Question>
 
+## Arrays
+
 <Question>
-  <Title>What is the type of mixedArray?</Title>
+  <Title>Push vs assign: Does it show errors on line A or B?</Title>
 
-  ```ts
-  const mixedArray = [1, "Bob"]
-  ```
+```ts
+let tuple: [number, number] = [1, 2];
+tuple.push(3); // A
+tuple = [1, 2, 3]; // B
+```
+
   <Answer>
-    The type is `(number | string)[]`. 
+  It shows errors on line B.
 
-    TypeScript can infer the possible types from the contents of the array.
+   - Line A: No errors. Because tuples are regular arrays at runtime.
+   - Line B: Errors. Because the variable tuple only accepts tuples with 2 numbers.
   </Answer>
 </Question>
 
@@ -130,35 +136,15 @@ Interfaces and types work the same way regarding optional properties.
 </Question>
 
 <Question>
-  <Title>Generic array: Which word should we put instead of ___?</Title>
+  <Title>What is the type of mixedArray?</Title>
 
   ```ts
-  const arr: ___<number> = []
-  arr.push(1)
+  const mixedArray = [1, "Bob"]
   ```
   <Answer>
-  The word to use is `Array`.
+    The type is `(number | string)[]`. 
 
-  Consider that `Array<some_type>` is the same as `some_type[]`. 
-  </Answer>
-</Question>
-
-## Arrays
-
-<Question>
-  <Title>Push vs assign: Does it show errors on line A or B?</Title>
-
-```ts
-let tuple: [number, number] = [1, 2];
-tuple.push(3); // A
-tuple = [1, 2, 3]; // B
-```
-
-  <Answer>
-  It shows errors on line B.
-
-   - Line A: No errors. Because tuples are regular arrays at runtime.
-   - Line B: Errors. Because the variable tuple only accepts tuples with 2 numbers.
+    TypeScript can infer the possible types from the contents of the array.
   </Answer>
 </Question>
 
@@ -1103,6 +1089,9 @@ logBoat(reusableVar);
 </Answer>
 </Question>
 
+
+## Generics
+
 <Question>
   <Title>Simple generic: What should you put on ___ to make the code work?</Title>
 
@@ -1124,10 +1113,19 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-## Generics
+<Question>
+  <Title>Generic array: Which word should we put instead of ___?</Title>
 
+  ```ts
+  const arr: ___<number> = []
+  arr.push(1)
+  ```
+  <Answer>
+  The word to use is `Array`.
 
-## SDRAFT
+  Consider that `Array<some_type>` is the same as `some_type[]`. 
+  </Answer>
+</Question>
 
 <Question>
   <Title>Multiple generic types: What is the type of x?</Title>
@@ -1149,6 +1147,18 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
+## SDRAFT
+
+<Question>
+  <Title></Title>
+
+  ```ts
+ 
+  ```
+  <Answer>
+
+  </Answer>
+</Question>
 
 ## EDRAFT
 
