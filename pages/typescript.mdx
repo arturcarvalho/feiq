@@ -1147,18 +1147,61 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-## SDRAFT
-
 <Question>
-  <Title></Title>
+  <Title>Generic arrow functions: Which line won't produce compilation errors?</Title>
 
   ```ts
- 
+  const identity = <T>(val: T) => val // A
+  const identity = (val: T)<T> => val // B
+  identity(3) // returns 3
   ```
   <Answer>
-
+  Line `A`. 
+  
+  Like in regular functions, the generic type definition comes before the parentheses for the parameters.
   </Answer>
 </Question>
+
+<Question>
+  <Title>Narrowed generic: Will the code compile?</Title>
+
+  ```ts
+  const id = <T>(val: T) => val
+  id(1) // A
+  id<string>(1) // B
+  ```
+
+  <Answer>
+  The code won't compile on line `B`.
+
+  Because you narrowed the type of the function (by passing `<string>`) you will get a compilation error warning you the argument of type 'number' is not assignable to parameter of type 'string'.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Generic Promise: Will the code compile?</Title>
+
+  ```ts
+  const sleep = <T>(val: T, ms: number) => {
+      return new Promise<T>((res) => setTimeout(() => res(val), ms))
+  }
+
+  sleep<number>("hey", 2000).then((val) => console.log(val))
+  ```
+  <Answer>
+  The code won't compile.
+
+  To make it compile, you'd have to change the sleep call to accept strings. Like so:
+  ```ts
+  sleep<string>("hey", 2000)
+  ```
+  </Answer>
+</Question>
+
+
+## Errors
+## SDRAFT
+
 
 ## EDRAFT
 
