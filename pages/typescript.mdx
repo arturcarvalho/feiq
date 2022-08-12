@@ -1200,10 +1200,60 @@ logBoat(reusableVar);
 
 
 ## Errors
-## SDRAFT
 
+<Question>
+  <Title>Throwing errors: Will the code compile?</Title>
 
-## EDRAFT
+  ```ts
+  function f(n:number): number | Error {
+      if(n === 3) throw new Error("I don't like 3");
+      return n;
+  }
+
+  function g(n:number): number {
+      if(n === 3) throw new Error("I don't like 3");
+      return n;
+  }
+  ```
+  <Answer>
+  Yes.
+  
+  Any function can thrown an error.
+  </Answer>
+</Question>
+
+<Question>
+  <Title>Catch error message: Will lines A and B compile?</Title>
+
+  ```ts
+  function getErrorMessage(error: unknown): string {
+      return (error instanceof Error) ? error.message : String(error);
+  }
+
+  function f() {
+      try {
+          throw new Error('Oh no!')
+      } catch (error) {
+          console.log(error.message); // A
+      }
+  }
+
+  function g() {
+      try {
+          throw new Error('Oh no!')
+      } catch (error) {
+          console.log(getErrorMessage(error))  // B       
+      }
+  }
+
+  ```
+  <Answer>
+  No, line A will not compile. 
+
+  The type of error is `unknown`. Learn more from [Kent](https://kentcdodds.com/blog/get-a-catch-block-error-message-with-typescript).
+  </Answer>
+</Question>
+
 
 
 ## Configuration
