@@ -185,6 +185,23 @@ let b: Boat = {};
   </Answer>
 </Question>
 
+<Question>
+  <Title>String vs string: Will it compile?</Title>
+
+  ```ts
+  let s1: string;
+  let s2: String;
+
+  s1 = s2; // A
+  s1 = String(1) // B
+  ```
+  <Answer>
+Line `A` will not compile because `string` and `String` are different types. 
+
+[Avoid using Number, String, Boolean, Symbol and Object](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#number-string-boolean-symbol-and-object). 
+  </Answer>
+</Question>
+
 ## Union types
 
 <Question>
@@ -578,6 +595,23 @@ function f(n: number) {
  export default ({ children }) => <PageLayout>{children}</PageLayout>;
 ```
 </Answer>
+</Question>
+
+<Question>
+  <Title>Type assertions: Will the code compile?</Title>
+
+  ```ts
+  type T = { a: 1 }
+  let t1 = {} as T; // A
+  let t2: T = {} // B
+  ```
+  <Answer>
+  No, the code won't compile for line `B`.
+
+  There are some situations when using `as` that will make the code more permissive like in the example above.
+  Learn more about [type assertions](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions).
+
+  </Answer>
 </Question>
 
 ## Functions
@@ -1254,6 +1288,34 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
+## Enums and string literals
+
+Learn more:
+- [Joe Previte Post](https://www.typescriptcourse.com/enums-in-typescript-and-when-should-you-use-them)
+- [Joe Previte tweet](https://twitter.com/jsjoeio/status/1559958790841061376?s=27&t=6G9Rqqk-KU3CE9y1ucYa3Q)
+- [Stack Overflow question](https://stackoverflow.com/questions/49761972/difference-between-string-enums-and-string-literal-types-in-ts)
+
+<Question>
+  <Title>What's the result?</Title>
+
+  ```ts
+  enum DirectionEnum {
+    Up = "up",
+    Down = "down",
+  }
+  const enumFn =(_dir: DirectionEnum) => _dir
+  
+  const result = [];
+  result.push(enumFn(DirectionEnum.Up))
+  result.push(enumFn("up"))
+  ```
+  <Answer>
+  The result is a type error.
+
+  The second push cannot infer the type.
+  </Answer>
+</Question>
+
 
 
 ## Configuration
@@ -1269,7 +1331,7 @@ logBoat(reusableVar);
   <Answer>
   The code will compile. 
 
-  `null` and `undefined` are considered a subtype of any type when `--stricthNullChecks` is set to false.
+  `null` and `undefined` are considered a subtype of any type when `--strictNullChecks` is set to false.
   This means type `T` and `T | undefined` or `T | null` are [considered synonymous](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html).
 
   </Answer>
@@ -1277,7 +1339,7 @@ logBoat(reusableVar);
 
 ## Learn more
 
-If you want to learn more, visit [TypeScript documentation](https://www.typescriptlang.org) 
+If you want to learn more, visit the [TypeScript documentation](https://www.typescriptlang.org) 
 and [Mike North's courses](https://www.typescript-training.com/).
 
 export default ({ children }) => <PageLayout>{children}</PageLayout>;
