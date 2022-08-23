@@ -5,7 +5,7 @@ import PageLayout from "../layouts/PageLayout";
 
 ## Variables and values
 
-<Question>
+<Question slug="623ef168-3c18-45d3-9c04-28779e5c3c6b">
   <Title>What are the types of the variable x and y?</Title>  
   
   ```ts 
@@ -20,7 +20,7 @@ import PageLayout from "../layouts/PageLayout";
   </Answer>
 </Question>
 
-<Question>
+<Question slug="c649ffbd-bcf3-4b9f-9214-87864beb9dae">
 <Title>NaN as a number: Will it compile?</Title>
 
 ```ts
@@ -33,7 +33,7 @@ n = NaN;
   </Answer>
 </Question>
 
-<Question>
+<Question slug="b67bc6cf-3596-4297-9208-b49747c2be56">
   <Title>Literal type: Will this compile?</Title>
 
 ```ts
@@ -49,7 +49,7 @@ No, this won't compile. The function only accepts `num` where the value is 30.
 
 ## Objects
 
-<Question>
+<Question slug="698aaf50-cb52-4b77-9eed-8d34cca3e103">
 <Title>Optional properties: Does it compile?</Title>
 
 ```ts
@@ -83,7 +83,7 @@ Interfaces and types work the same way regarding optional properties.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="d8ffd6d1-c245-4e34-b610-8ba4f8ce5dd8">
   <Title>Index signatures: Will it compile?</Title>
  
   ```ts
@@ -103,7 +103,7 @@ Interfaces and types work the same way regarding optional properties.
 
 ## Arrays
 
-<Question>
+<Question slug="152eaeab-dee3-4cce-809e-22426865d8d4">
   <Title>Push vs assign: Does it show errors on line A or B?</Title>
 
 ```ts
@@ -120,7 +120,7 @@ tuple = [1, 2, 3]; // B
   </Answer>
 </Question>
 
-<Question>
+<Question slug="e14481cc-c322-4caa-a72b-a796829722be">
   <Title>Defining array types: Which lines don't compile?</Title>
 
   ```ts
@@ -135,7 +135,7 @@ tuple = [1, 2, 3]; // B
   </Answer>
 </Question>
 
-<Question>
+<Question slug="4656d6d5-5d44-4250-83d3-29150a358465">
   <Title>What is the type of mixedArray?</Title>
 
   ```ts
@@ -150,7 +150,7 @@ tuple = [1, 2, 3]; // B
 
 ## Types
 
-<Question>
+<Question slug="1bf62790-6a36-4ac6-847e-df966f2bfe81">
 <Title>Types: Will they merge?</Title>
 
 ```ts
@@ -169,7 +169,7 @@ engine: boolean;
   </Answer>
 </Question>
 
-<Question>
+<Question slug="94f0a872-f474-4893-8292-e6767a6c0ad4">
 <Title>Type objects: Can they be partially created?</Title>
 
 ```ts
@@ -185,7 +185,7 @@ let b: Boat = {};
   </Answer>
 </Question>
 
-<Question>
+<Question slug="8e3a9c12-286d-4391-bc07-8d189a448277">
   <Title>String vs string: Will it compile?</Title>
 
   ```ts
@@ -204,7 +204,7 @@ Line `A` will not compile because `string` and `String` are different types.
 
 ## Union types
 
-<Question>
+<Question slug="aadbc028-66e4-4b9d-b773-27c600117a3c">
 <Title>Union: Does it compile?</Title>
 
 ```ts
@@ -218,7 +218,7 @@ r = 42;
   </Answer>
 </Question>
 
-<Question>
+<Question slug="56ec9120-b6ed-4318-89fa-f1b0b387ab3b">
 <Title>Union 👀: Does it compile?</Title>
 
 ```ts
@@ -239,7 +239,7 @@ r = 42;
   </Answer>
 </Question>
 
-<Question>
+<Question slug="bb6ac576-09cc-4d19-ba8b-097d58d0dd57">
 <Title>Derived types: What is the type of `a`?</Title>
 
 ```ts
@@ -261,7 +261,7 @@ const [a] = f();
 
 ## Intersection types and Interfaces
 
-<Question>
+<Question slug="63e9c111-4137-4666-821a-ab67d372a7ef">
 <Title>Intersecting types of objects: Does it compile?</Title>
 
 ```ts
@@ -282,7 +282,7 @@ c = { a: "a", b: 1 };
   </Answer>
 </Question>
 
-<Question>
+<Question slug="31f48d79-0174-4908-bb2b-ab96e7293a2b">
   <Title>Intersecting primitive types: Does it compile?</Title>
 
 ```ts
@@ -298,7 +298,7 @@ c = "hi";
   </Answer>
 </Question>
 
-<Question>
+<Question slug="06955796-c332-4d1e-8d85-a5d17028741b">
   <Title>Will the interfaces merge?</Title>
 
 ```ts
@@ -317,7 +317,7 @@ const b = { color: "white", engined: true };
 </Answer>
 </Question>
 
-<Question>
+<Question slug="941298a4-5b9e-4141-9ebc-7d7c1decb5bc">
 <Title>Does it compile? interface vs type</Title>
 
 ```ts
@@ -335,7 +335,7 @@ interface Boat {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="a4d7df2d-9065-46c7-b77e-c8d3d3fb2c82">
   <Title>Types vs Interfaces: Will line A and/or B compile?</Title>
 
   ```ts
@@ -372,7 +372,7 @@ interface Boat {
 
 ## Narrowing (guards)
 
-<Question>
+<Question slug="2c1a85ae-866e-48d1-9b9e-6a500d58a98d">
   <Title>Rounding number: Will it compile?</Title>
 
 ```ts
@@ -391,7 +391,7 @@ function f(n: number | string) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="b9653ef2-ad50-4234-b9c7-898471881732">
   <Title>Null or: What is the type n on line A?</Title>
 
 ```ts
@@ -411,7 +411,7 @@ function f(n: string | string[] | null) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="5c76d160-7695-41be-878a-4708b1e7aa7e">
   <Title>Equality narrowing: What's the type of x in line A?</Title>
 
 ```ts
@@ -431,7 +431,7 @@ function f(x: string | number, y: string | object) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="99174fba-87d2-4632-877d-432132a20d9a">
   <Title>Loose equality narrowing: What's the type of x in line A?</Title>
 
 ```ts
@@ -451,7 +451,7 @@ function f(x: boolean | null | undefined) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="379cd03e-2f26-456b-87d1-710b5b2aae14">
   <Title>in narrowing: What's the type of x in line A?</Title>
 
 ```ts
@@ -473,7 +473,7 @@ function f(x: Boat | Car) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="d6d4f0e0-b6b3-419d-812b-46fb9dc7c32b">
   <Title>instanceof narrowing: What's the type of x in line A?</Title>
 
 ```ts
@@ -496,7 +496,7 @@ function f(x: Boat | string) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="0617662d-e0a3-4461-b35f-ed5fe9a89a68">
   <Title>type guard: What is ??? to make the code work?</Title>
 
 ```ts
@@ -517,7 +517,7 @@ if(isBoat(maybeBoat)) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="6b77959d-95e6-4e01-8c92-b4b41a5a1434">
   <Title>type guard assertion: What is the type of `maybeBoat` in line A?</Title>
 
 ```ts
@@ -546,7 +546,7 @@ maybeBoat; // A
   </Answer>
 </Question>
 
-<Question>
+<Question slug="89842e99-c75a-4ec5-8278-7d33990dafe3">
   <Title>type guard assertion: What is the type of `car` in line A?</Title>
 
 ```ts
@@ -571,7 +571,7 @@ car; // A
   </Answer>
 </Question>
 
-<Question>
+<Question slug="cc2c9bd5-3ee8-4ac1-b2cf-8e7876725c69">
   <Title>Can you assign a less strict value to a variable?</Title>
 
 ```ts
@@ -597,7 +597,7 @@ function f(n: number) {
 </Answer>
 </Question>
 
-<Question>
+<Question slug="95bac838-6560-4bb8-b0d0-88a7cfa3c52b">
   <Title>Type assertions: Will the code compile?</Title>
 
   ```ts
@@ -616,7 +616,7 @@ function f(n: number) {
 
 ## Functions
 
-<Question>
+<Question slug="4ceb32e7-993d-403e-9e75-bc138a8ab84d">
   <Title>interface function: Replace comment A so the code compiles</Title>
 
   ```ts
@@ -630,7 +630,7 @@ function f(n: number) {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="f439577d-feb1-477a-a1ab-02b773810e0a">
   <Title>type function: Replace comment A so the code compiles</Title>
 
   ```ts
@@ -653,7 +653,7 @@ const sub: TwoNumsFn = (a, b) => a - b
 
 ## Bottom values: null, undefined and void
 
-<Question>
+<Question slug="d57cee3e-9c9c-45e1-b2fd-123d8084aa1f">
   <Title>Non-null assertion operator: Will the code compile?</Title>
 
 ```ts
@@ -673,7 +673,7 @@ b.location!.country = "Luxembourg";
   </Answer>
 </Question>
 
-<Question>
+<Question slug="e281b87c-9176-43ba-85d3-ca1f62aaa259">
   <Title>Definite Assignment Operator: Will the code compile?</Title>
 
 ```ts
@@ -690,7 +690,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="c575ef10-cded-4bd1-8a31-efdf67fb04ef">
   <Title>Can a function typed to return only undefined compile?</Title>
 
   ```ts
@@ -703,7 +703,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="354fffbb-5f28-4cac-b675-c86917adf647">
   <Title>What should you write instead of __ so that you can ignore the return value of a function?</Title>
 
   ```ts
@@ -715,7 +715,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="4760da98-0c53-48d3-bdd6-d57a8c41f9ba">
   <Title>Does the code compile for a function that has no return values but has undefined as return type?</Title>
 
   ```ts
@@ -733,7 +733,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="4b88c1fa-dbfd-4c7e-8396-7982d68800b5">
   <Title>What is the return type when nothing is returned and the function has no return type?</Title>
 
   ```ts
@@ -746,7 +746,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
 </Question>
 
 ## Classes
-<Question>
+<Question slug="edb04fe2-ec1a-439b-bd38-26149d93bda6">
   <Title>Will the class with Promise on constructor show errors?</Title> 
   
   ```ts
@@ -766,7 +766,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="796496ca-4d5d-4e34-92d4-2eca5b9d6ad7">
   <Title>Does the abstract class compile?</Title> 
   
   ```ts
@@ -786,7 +786,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="26f46c26-455e-41c5-91c0-b1c3ddd1144a">
   <Title>Does the constrained abstract class work?</Title> 
   
   ```ts
@@ -805,7 +805,7 @@ The `x!` will suppress any errors even if the class field was not initialized.
   </Answer>
 </Question>
 
-<Question>
+<Question slug="d8b69df8-e54e-4abc-ba07-c690a15e70ea">
 
 <Title>Does the class with public on constructor compile?</Title>
 
@@ -840,7 +840,7 @@ class Titanic implements Boat {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="35667192-dec9-4825-908e-29ef35cdd818">
   <Title>Will the class and interface merge?</Title>
 
 ```ts
@@ -879,7 +879,7 @@ p.engine;
   </Answer>
 </Question>
 
-<Question>
+<Question slug="875e56be-6a39-44ca-b0e6-d5c295e15f05">
   <Title>Will the same private field compile?</Title>
 
 ```ts
@@ -907,7 +907,7 @@ This happens because private fields are public at runtime. So both fields can be
   </Answer>
 </Question>
 
-<Question>
+<Question slug="3fc3c098-5e50-4389-9c32-7e2c436f1060">
   <Title>Will the same private field (#) compile?</Title>
 
 ```ts
@@ -932,7 +932,7 @@ class Titanic extends Boat {
 </Answer>
 </Question>
 
-<Question>
+<Question slug="888985f3-90f0-41cd-b359-d126b0299c94">
   <Title>Property not initialized: Does it compile?</Title> 
   
   ```ts
@@ -949,7 +949,7 @@ class Titanic extends Boat {
   </Answer>
 </Question>
 
-<Question>
+<Question slug="d1c0270f-1ca8-43f6-9d32-23b21656079a">
   <Title>Function calling this: Does it compile?</Title>
 
 ```ts
@@ -981,7 +981,7 @@ We can fix it by defining the type of `this`:
   </Answer>
 </Question>
 
-<Question>
+<Question slug="860ab91b-8879-4f8b-a99e-a715b003af6a">
   <Title>Access modifiers: Will A, B, C and D compile?</Title>
 
   ```ts
@@ -1011,7 +1011,7 @@ We can fix it by defining the type of `this`:
   </Answer>
 </Question>
 
-<Question>
+<Question slug="b754ef7c-562f-41b7-9d52-3049f3541056">
   <Title>Access modifiers: Will A, B, C and D compile?</Title>
 
   ```ts
@@ -1031,7 +1031,7 @@ We can fix it by defining the type of `this`:
   </Answer>
 </Question>
 
-<Question>
+<Question slug="b9da2153-acc7-4cfc-a65e-c6dd1a2bcc35">
   <Title>Access modifiers: Which lines won't compile?</Title>
 
   ```ts
@@ -1061,7 +1061,7 @@ We can fix it by defining the type of `this`:
 </Question>
 
 
-<Question>
+<Question slug="426d678e-9fba-435f-8bd8-22ddaadd5922">
   <Title>readonly field: Will there be type errors on A or B?</Title>
 
   ```ts
@@ -1082,7 +1082,7 @@ We can fix it by defining the type of `this`:
   </Answer>
 </Question>
 
-<Question>
+<Question slug="cbe8b839-77b0-48c0-a21b-cd03a99441a3">
   <Title>Are excess properties checked?</Title>
 
 ```ts
@@ -1126,7 +1126,7 @@ logBoat(reusableVar);
 
 ## Generics
 
-<Question>
+<Question slug="1bcbdaa0-15a0-41fb-96a0-b6d2b823bfbc">
   <Title>Simple generic: What should you put on ___ to make the code work?</Title>
 
   ```ts
@@ -1147,7 +1147,7 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-<Question>
+<Question slug="b46c2efa-0a09-46f7-8762-8dff68360f36">
   <Title>Generic array: Which word should we put instead of ___?</Title>
 
   ```ts
@@ -1161,7 +1161,7 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-<Question>
+<Question slug="22348361-a8e3-4db2-b747-6d77fd60eca7">
   <Title>Multiple generic types: What is the type of x?</Title>
 
   ```ts
@@ -1181,7 +1181,7 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-<Question>
+<Question slug="444c8ab8-2898-4131-8484-94573bfc54ab">
   <Title>Generic arrow functions: Which line won't produce compilation errors?</Title>
 
   ```ts
@@ -1196,7 +1196,7 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-<Question>
+<Question slug="2c47c8c6-3159-4183-92a1-4f31167633ad">
   <Title>Narrowed generic: Will the code compile?</Title>
 
   ```ts
@@ -1212,7 +1212,7 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-<Question>
+<Question slug="7ec38476-dff6-4f2a-bd27-4d0f90268852">
   <Title>Generic Promise: Will the code compile?</Title>
 
   ```ts
@@ -1235,7 +1235,7 @@ logBoat(reusableVar);
 
 ## Errors
 
-<Question>
+<Question slug="399fc05c-6a86-4fca-b45b-24277434ba02">
   <Title>Throwing errors: Will the code compile?</Title>
 
   ```ts
@@ -1256,7 +1256,7 @@ logBoat(reusableVar);
   </Answer>
 </Question>
 
-<Question>
+<Question slug="c2e943f3-849c-4a8c-97b4-4cf01783a3c7">
   <Title>Catch error message: Will lines A and B compile?</Title>
 
   ```ts
@@ -1295,19 +1295,18 @@ Learn more:
 - [Joe Previte tweet](https://twitter.com/jsjoeio/status/1559958790841061376?s=27&t=6G9Rqqk-KU3CE9y1ucYa3Q)
 - [Stack Overflow question](https://stackoverflow.com/questions/49761972/difference-between-string-enums-and-string-literal-types-in-ts)
 
-<Question>
-  <Title>What's the result?</Title>
+<Question slug="9e4bde84-1760-4f93-a9e4-1b77a7f27abf">
+  <Title>Enum: What's the output?</Title>
 
   ```ts
   enum DirectionEnum {
     Up = "up",
     Down = "down",
   }
-  const enumFn =(_dir: DirectionEnum) => _dir
+  const enumFn =(dir: DirectionEnum) => dir
   
-  const result = [];
-  result.push(enumFn(DirectionEnum.Up))
-  result.push(enumFn("up"))
+  enumFn(DirectionEnum.Up) // output
+  enumFn("up") // output
   ```
   <Answer>
   The result is a type error.
@@ -1316,11 +1315,85 @@ Learn more:
   </Answer>
 </Question>
 
+<Question slug="7d3b4860-c7b3-4e24-8b42-f5b014e088d1">
+  <Title>String literal: What's the output?</Title>
 
+  ```ts
+  type DirectionLiteral = "up" | "down"
+  const literalFn = (dir: DirectionLiteral) => dir
+
+  literalFn("up") // output
+  ```
+  <Answer>
+  The output is "up".
+
+  In this case, "up" can be inferred as being of type "DirectionLiteral". There is no need to generate code as it happens with enums.
+  </Answer>
+</Question>
+
+
+<Question slug="daf256bd-bbc3-4f0a-8c5f-b8d4e6c9cbef">
+  <Title>Narrowing Enums and string literals: What's the output?</Title>
+
+  ```ts
+  enum DirectionEnum {
+    Up = "up",
+    Down = "down",
+  }
+
+  type DirectionLiteral = "up" | "down"
+
+  const enumFn = (dir: DirectionEnum) => dir
+  const literalFn = (dir: DirectionLiteral) => dir
+  const b:string = "up" // notice it's a string
+
+  if (b === "up") {
+    enumFn(b); // output
+    literalFn(b); // output
+  }
+  ```
+  <Answer>
+  The output is a type error on the first output.
+
+  You can't narrow types for an enum by comparing directly to a string.
+
+  </Answer>
+</Question>
+
+<Question slug="8b7970c9-7d49-4c9e-8c2c-669b8b9ff55f">
+  <Title>const enum: What will be the JavaScript created on line A?</Title>
+
+  ```ts
+    const enum Directions { Up, Down }
+  const dirs = [Directions.Down, Directions.Down, Directions.Up ]
+
+  console.log(dirs)
+  ```
+  <Answer>
+  `[1, 1, 0]`.
+
+  When using `const enum` all the enum code is erased during compilation and replaced by its corresponding value.
+  </Answer>
+</Question>
+
+<Question slug="06aec76c-49a1-47c4-8a21-91370e1bca4a">
+  <Title>number vs string: What's the log?</Title>
+
+  ```ts
+  enum DirNum { Up, Down }
+  enum DirStr { Up = "up", Down = "down" }
+
+  console.log(DirNum.Up)
+  console.log(DirStr.Up)
+  ```
+  <Answer>
+  The log is `0` and `up`.
+  </Answer>
+</Question>
 
 ## Configuration
 
-<Question>
+<Question slug="68b91c0b-9555-4fcf-bb11-05fb5ae6a946">
   <Title>Will the code compile if strictNullChecks is set to false?</Title>
 
   ```ts
