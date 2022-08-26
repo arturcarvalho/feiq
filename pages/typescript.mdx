@@ -1393,6 +1393,29 @@ Learn more:
 
 ## Configuration
 
+<Question slug="3437f9e6-da4f-4afc-b6b2-022fadc400ce">
+  <Title>d.ts files: What should you put instead of XXX to cause a type error on line A?</Title>
+
+  ```ts
+  // typings.d.ts
+  XXX module 'lodash' {
+    export function random(a: number, b: number): number;
+  }
+
+  // index.ts
+  import { random } from 'lodash';
+  random('banana'); // A
+  ```
+  <Answer>
+  `declare`.
+
+  To describe the shape of libraries not written in TypeScript, we need to declare the API that the library exposes.
+  [More info](https://stackoverflow.com/questions/43335962/purpose-of-declare-keyword-in-typescript)
+
+  Instead of defining the types yourself, you can use [Definitely Typed](https://github.com/DefinitelyTyped/DefinitelyTyped)
+  </Answer>
+</Question>
+
 <Question slug="68b91c0b-9555-4fcf-bb11-05fb5ae6a946">
   <Title>Will the code compile if strictNullChecks is set to false?</Title>
 
