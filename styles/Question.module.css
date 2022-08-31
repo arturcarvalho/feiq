@@ -29,3 +29,11 @@
 .body {
     padding: 0 24px 16px 24px;
 }
+
+.title .slug {
+    visibility: hidden;
+}
+
+.title:hover .slug {
+    visibility: visible;
+}
