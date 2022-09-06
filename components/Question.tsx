@@ -16,7 +16,7 @@ export function Title({ children, slug }: Props) {
 
 export function Answer({ children }: Props) {
   return (
-    <details className={styles.answer}>
+    <details className="bg-slate-50 mt-2 border-t border-slate-300 -m-4 cursor-pointer">
       <div className={styles.body}>{children}</div>
       <summary className={styles.summary}>Answer</summary>
     </details>
@@ -32,7 +32,7 @@ export function Question({ children, slug }: Props) {
     return child;
   });
   return (
-    <article className={styles.question} id={slug}>
+    <article className="shadow border border-slate-200 rounded p-4 my-8" id={slug}>
       {childrenWithProps}
     </article>
   );

@@ -15,8 +15,8 @@ const PageLayout = ({ children }: Props) => {
   const entries = useEntries(selector);
 
   return (
-    <div className={styles.cols}>
-      <div className={styles.left}>{children}</div>
+    <div className="flex">
+      <div className="flex-1 w-full md:max-w-screen-sm md:pr-8">{children}</div>
       <nav aria-label="Table of Contents" className={styles.right}>
         <ul>
           {entries.map((e) => (

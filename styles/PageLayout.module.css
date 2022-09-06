@@ -1,13 +1,4 @@
-.cols {
-    display: flex;
-}
-
-
 /* TOC */
-
-.left {
-    flex: 1;
-}
 
 .right {
     position: sticky;

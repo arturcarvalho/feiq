@@ -27,8 +27,7 @@
 
 html,
 body {
-    background: white;
-    background: var(--gray-200);
+    @apply bg-white;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -70,4 +69,17 @@ p {
 h2,
 h3 {
     scroll-margin-top: 16px;
+}
+
+
+/* headings */
+
+h1 {
+    @apply text-3xl;
+    @apply py-2;
+}
+
+h2 {
+    @apply text-2xl;
+    @apply py-1;
 }
