@@ -1,9 +1,9 @@
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
+// import styles from "../styles/Header.module.css";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className="py-4 bg-slate-100 shadow">
       <div className="max-width-container">
         <h2>
           <Link href="/">Home</Link>
