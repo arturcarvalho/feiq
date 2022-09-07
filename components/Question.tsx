@@ -16,7 +16,7 @@ export function Title({ children, slug }: Props) {
 
 export function Answer({ children }: Props) {
   return (
-    <details className="bg-slate-50 mt-2 border-t border-slate-300 -m-4 cursor-pointer">
+    <details className="bg-sky-50 text-sky-900 font-semibold mt-2 border-t border-sky-100 -m-4 cursor-pointer">
       <div className={styles.body}>{children}</div>
       <summary className={styles.summary}>Answer</summary>
     </details>

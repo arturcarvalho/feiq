@@ -1,39 +1,56 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 
+type Props = {
+  children?: React.ReactNode;
+};
+
+const Soon = ({ children }: Props) => {
+  return (
+    <div className="m-4 p-6 border bg-neutral-50 border-neutral-200 rounded-lg text-neutral-5">
+      {children}
+    </div>
+  );
+};
+
+const ActiveCard = ({ children }: Props) => {
+  return <div className="m-4 p-6 bg-sky-50 border rounded-lg">{children}</div>;
+};
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Front-End Interview Questions</h1>
+        <h1 className="uppercase font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-sky-600  to-green-400">
+          Front-End Interview Questions
+        </h1>
 
         <p className={styles.description}>
-          {/* same text as <FullHead> description */}
-          Practice TypeScript with flash cards. <br />
-          It&apos;s open source, so you can help us writing some flash cards in
-          MDX!
+          Practice front-end with flash cards
         </p>
 
-        <div className={styles.grid}>
-          <a href="/typescript" className={styles.card}>
-            <h2>TypeScript &rarr;</h2>
-            <p>TypeScript interview questions</p>
-          </a>
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          <ActiveCard>
+            <a href="/typescript">
+              <h2>TypeScript &rarr;</h2>
+              <p>TypeScript interview questions</p>
+            </a>
+          </ActiveCard>
 
-          <div className={styles.soonCard}>
+          <Soon>
             <h2>JavaScript (soon)</h2>
             <p>JavaScript interview questions</p>
-          </div>
+          </Soon>
 
-          <div className={styles.soonCard}>
+          <Soon>
             <h2>React (soon)</h2>
             <p>React interview questions</p>
-          </div>
+          </Soon>
 
-          <div className={styles.soonCard}>
+          <Soon>
             <h2>CSS & HTML (soon)</h2>
             <p>CSS and HTML interview questions</p>
-          </div>
+          </Soon>
         </div>
       </main>
 
@@ -43,7 +60,7 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Built by @arturcarvalho
+          built by @arturcarvalho
         </a>
       </footer>
     </div>
