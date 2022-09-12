@@ -7,7 +7,7 @@ type Props = {
 
 const Soon = ({ children }: Props) => {
   return (
-    <div className="m-4 p-6 border bg-neutral-50 border-neutral-200 rounded-lg text-neutral-5">
+    <div className="m-4 p-6 border bg-neutral-50 border-neutral-200 rounded-lg text-neutral-500">
       {children}
     </div>
   );
