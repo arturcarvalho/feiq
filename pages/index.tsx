@@ -33,7 +33,7 @@ const Home: NextPage = () => {
     <div className="flex flex-col">
       <main className="flex flex-1 flex-col">
         <div className="bg-slate-900">
-          <div className="flex lg:w-[1024px] w-full mx-auto my-12">
+          <div className="flex lg:w-[1024px] mx-auto my-12">
             <h1 className="px-4 text-left font-title uppercase leading-12 font-black text-6xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-400">
               Front-End <br />
               Interview
