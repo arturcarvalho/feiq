@@ -1,4 +1,5 @@
-import "highlight.js/styles/github.css";
+import "@fontsource/racing-sans-one"
+import "highlight.js/styles/night-owl.css";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import Layout from "../layouts/Layout";

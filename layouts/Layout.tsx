@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import FullHead from "../components/FullHead";
 
 type Props = {
@@ -7,7 +8,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen items-center">
       <FullHead
         // socialImage="index2.png"
         title={"FEIQ: Front-End Interview Questions"}
@@ -16,8 +17,10 @@ const Layout = ({ children }: Props) => {
         }
         url="https://www.feiq.org"
       />
+
       <Header />
-      <main className="max-width-container main">{children}</main>
+      <main className="flex-1 ">{children}</main>
+      <Footer />
     </div>
   );
 };

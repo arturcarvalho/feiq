@@ -6,7 +6,14 @@ module.exports = {
         "./layouts/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                title: ["Racing Sans One"]
+            },
+            colors: {
+                code: '#011627'
+            }
+        },
     },
     plugins: [],
 }

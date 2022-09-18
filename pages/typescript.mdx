@@ -91,7 +91,8 @@ Interfaces and types work the same way regarding optional properties.
   type Marina = { [k: string]: Boat }
 
   let marina: Marina = {}
-  marina.titanic.size = 300; // Notice property titanic was not defined
+  // Note property titanic was not defined
+  marina.titanic.size = 300; 
   marina.mcBoat.size = 30;
   ```
   <Answer>
@@ -587,7 +588,8 @@ if(isBoat(maybeBoat)) {
 ```ts
 type Boat = { make: string; model: string };
 
-function assertIsBoat(valueToTest: any): asserts valueToTest is Boat {
+function assertIsBoat(valueToTest: any): 
+  asserts valueToTest is Boat {
   const cond =
     valueToTest &&
     typeof valueToTest === "object" &&
@@ -617,8 +619,10 @@ maybeBoat; // A
 type Boat = { make: string; model: string };
 type Car = { seats: number };
 
-function assertIsBoat(valueToTest: any): asserts valueToTest is Boat {
-  const cond = valueToTest && typeof valueToTest === "object";
+function assertIsBoat(valueToTest: any): 
+  asserts valueToTest is Boat {
+  const cond = valueToTest && 
+    typeof valueToTest === "object";
   if (!valueToTest) throw new Error("Value is not a Boat");
 }
 
@@ -1428,8 +1432,12 @@ Learn more:
   <Title>const enum: What will be the JavaScript created on line A?</Title>
 
   ```ts
-    const enum Directions { Up, Down }
-  const dirs = [Directions.Down, Directions.Down, Directions.Up ]
+  const enum Directions { Up, Down }
+  const dirs = [
+    Directions.Down,
+    Directions.Down,
+    Directions.Up
+  ]
 
   console.log(dirs)
   ```
@@ -1500,6 +1508,6 @@ Learn more:
 ## Learn more
 
 If you want to learn more, visit the [TypeScript documentation](https://www.typescriptlang.org) 
-and [Mike North's courses](https://www.typescript-training.com/).
+or [Mike North's courses](https://www.typescript-training.com/).
 
 export default ({ children }) => <PageLayout>{children}</PageLayout>;

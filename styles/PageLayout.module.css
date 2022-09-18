@@ -7,19 +7,20 @@
     padding: 0 16px;
     /* How far down the page you want your ToC to live */
     /* Give table of contents a scrollbar */
-    max-height: calc(100vh - 24px);
-    min-width: 300px;
+    max-height: calc(100vh - 64px);
     overflow: auto;
+    max-width: 300px;
 }
 
 .right li,
 .right a {
-    color: var(--sky-500);
+    @apply text-lg font-medium;
+    @apply text-indigo-500;
 }
 
 .right li:hover,
 .right a:hover {
-    color: var(--sky-700);
+    @apply text-indigo-800;
 }
 
 .right a {
@@ -29,10 +30,10 @@
 
 .right .active,
 .right .active a {
-    color: var(--sky-800);
+    @apply text-indigo-800;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1024px) {
     .right {
         display: none;
     }

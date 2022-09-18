@@ -15,13 +15,13 @@ const PageLayout = ({ children }: Props) => {
   const entries = useEntries(selector);
 
   return (
-    <div className="flex">
-      <div className="flex-1 w-full md:max-w-screen-sm md:pr-8">{children}</div>
+    <div className="flex pt-12">
+      <div className="flex-1  w-[768px] px-8 text-slate-700">{children}</div>
       <nav aria-label="Table of Contents" className={styles.right}>
         <ul>
           {entries.map((e) => (
             <li key={e.id} className={activeId === e.id ? styles.active : ""}>
-              <a
+              &rarr; <a
                 href={`#${e.id}`}
                 onClick={(evt) => {
                   evt.preventDefault();

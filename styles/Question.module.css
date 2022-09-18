@@ -21,19 +21,3 @@
 .answer:hover {
     border-color: var(--gray-200);
 }
-
-.summary {
-    padding: 24px;
-}
-
-.body {
-    padding: 0 24px 16px 24px;
-}
-
-.title .slug {
-    visibility: hidden;
-}
-
-.title:hover .slug {
-    visibility: visible;
-}

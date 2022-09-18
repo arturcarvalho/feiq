@@ -1,68 +1,74 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
 
 type Props = {
   children?: React.ReactNode;
 };
 
+type ActiveProps = {
+  children?: React.ReactNode;
+  link: string;
+};
+
 const Soon = ({ children }: Props) => {
   return (
-    <div className="m-4 p-6 border bg-neutral-50 border-neutral-200 rounded-lg text-neutral-500">
+    <div className="my-4 p-6 border bg-slate-900 lg:rounded-xl text-slate-400 italic">
       {children}
     </div>
   );
 };
 
-const ActiveCard = ({ children }: Props) => {
-  return <div className="m-4 p-6 bg-sky-50 border rounded-lg">{children}</div>;
+const ActiveCard = ({ children, link }: ActiveProps) => {
+  return (
+    <a
+      href={link}
+      className="block my-4 p-6 hover:bg-slate-700 hover:ease-in duration-300 lg:rounded-xl bg-slate-900 text-indigo-300 text-2xl"
+    >
+      {children}
+    </a>
+  );
 };
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className="uppercase font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-sky-600  to-green-400">
-          Front-End Interview Questions
-        </h1>
+    <div className="flex flex-col">
+      <main className="flex flex-1 flex-col">
+        <div className="bg-slate-900">
+          <div className="flex lg:w-[1024px] w-full mx-auto my-12">
+            <h1 className="px-4 text-left font-title uppercase leading-12 font-black text-6xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-400">
+              Front-End <br />
+              Interview
+              <br />
+              Questions
+            </h1>
 
-        <p className={styles.description}>
-          Practice front-end with flash cards
-        </p>
+            <p className="pl-24 py-3 text-3xl italic text-indigo-100">
+              Practice front-end interview questions with flash cards.
+              <br />
+              <br />
+              It&apos;s open source, want to add some <a href="https://github.com/arturcarvalho/feiq">questions</a>?
+            </p>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-          <ActiveCard>
-            <a href="/typescript">
-              <h2>TypeScript &rarr;</h2>
-              <p>TypeScript interview questions</p>
-            </a>
+        <div className="lg:w-[1024px] w-full mt-8 mx-auto">
+          <ActiveCard link="/typescript">
+            <h2>TypeScript &rarr;</h2>
+            {/* <p>TypeScript interview questions</p> */}
           </ActiveCard>
 
           <Soon>
-            <h2>JavaScript (soon)</h2>
-            <p>JavaScript interview questions</p>
+            <h2>JavaScript - soon</h2>            
           </Soon>
 
           <Soon>
-            <h2>React (soon)</h2>
-            <p>React interview questions</p>
+            <h2>React - soon</h2>
           </Soon>
 
           <Soon>
-            <h2>CSS & HTML (soon)</h2>
-            <p>CSS and HTML interview questions</p>
+            <h2>CSS & HTML - soon</h2>            
           </Soon>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https:twitter.com/arturcarvalho"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          built by @arturcarvalho
-        </a>
-      </footer>
     </div>
   );
 };
