@@ -32,13 +32,11 @@ h3 {
 /* headings */
 
 h1 {
-    @apply pl-4;
     @apply text-3xl;
     @apply py-2;
 }
 
 h2 {
-    @apply pl-4;
     @apply uppercase;
     @apply text-3xl font-semibold;
     @apply py-1;

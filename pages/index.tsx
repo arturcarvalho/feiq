@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <div className="lg:w-[1024px] w-full mt-8 mx-auto grid grid-cols-2 gap-6">
+        <div className="lg:w-[1024px] w-full mt-8 mx-auto grid grid-cols-2 gap-2 lg:gap-6">
           <ActiveCard link="/typescript">
             <h2 className="lg:text-3xl text-2xl">TypeScript &rarr;</h2>
             {/* <p>TypeScript interview questions</p> */}
