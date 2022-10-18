@@ -11,7 +11,7 @@ type ActiveProps = {
 
 const Soon = ({ children }: Props) => {
   return (
-    <div className="my-4 p-6 border bg-slate-900 lg:rounded-xl text-slate-400 italic">
+    <div className="p-6 border bg-slate-200 lg:rounded-xl text-slate-400 italic">
       {children}
     </div>
   );
@@ -21,7 +21,7 @@ const ActiveCard = ({ children, link }: ActiveProps) => {
   return (
     <a
       href={link}
-      className="block my-4 p-6 hover:bg-slate-700 hover:ease-in duration-300 lg:rounded-xl bg-slate-900 text-indigo-300 text-2xl"
+      className="block p-6 hover:bg-slate-700 hover:ease-in duration-300 lg:rounded-xl bg-slate-900 text-indigo-300 text-2xl"
     >
       {children}
     </a>
@@ -45,12 +45,12 @@ const Home: NextPage = () => {
               Practice front-end interview questions with flash cards.
               <br />
               <br />
-              It&apos;s open source, want to add some <a href="https://github.com/arturcarvalho/feiq">questions</a>?
+              It&apos;s open source, you can add some <a href="https://github.com/arturcarvalho/feiq">questions on github</a>
             </p>
           </div>
         </div>
 
-        <div className="lg:w-[1024px] w-full mt-8 mx-auto">
+        <div className="lg:w-[1024px] w-full mt-8 mx-auto grid grid-cols-2 gap-6">
           <ActiveCard link="/typescript">
             <h2>TypeScript &rarr;</h2>
             {/* <p>TypeScript interview questions</p> */}
