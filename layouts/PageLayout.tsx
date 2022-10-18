@@ -15,8 +15,8 @@ const PageLayout = ({ children }: Props) => {
   const entries = useEntries(selector);
 
   return (
-    <div className="flex pt-12">
-      <div className="flex-1  w-[768px] px-8 text-slate-700">{children}</div>
+    <div className="flex pt-12 justify-center">
+      <div className="flex-1 w-full lg:max-w-[768px] px-8 text-slate-700">{children}</div>
       <nav aria-label="Table of Contents" className={styles.right}>
         <ul>
           {entries.map((e) => (
