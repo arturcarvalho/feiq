@@ -44,5 +44,5 @@ Add it to `markdown.json` even if it's MDX. If it doesn't trigger automatically 
 Decisions are not final.
 
 - There are no tags. They seem to slow down content creation
-- State on localstorage
+- State on localStorage
 
