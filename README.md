@@ -30,6 +30,19 @@ Add it to `markdown.json` even if it's MDX. If it doesn't trigger automatically 
 
 # TODO
 
+- Improve appearance. Quite bad
+- Add js questions (from coderanx)
+- Track last time user saw answer
+- Generate flash cards
+- Make it work on mobile
 - Refactor PageLayout
 - Generate headings on server side
-- Get rid of `any`s
+- Get rid of anys
+
+# Decisions
+
+Decisions are not final.
+
+- There are no tags. They seem to slow down content creation
+- State on localstorage
+

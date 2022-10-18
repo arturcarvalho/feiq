@@ -9,7 +9,7 @@ const Header = () => {
         <Link href="/">
           <div className="flex items-center cursor-pointer">
             <Image  width="24px" height="24px" src="/logo.svg" alt="logo" />
-            <span className="ml-3 text-indigo-400">FEIQ</span>
+            <span className="ml-3 text-indigo-500">FEIQ</span>
           </div>
         </Link>
       </div>
