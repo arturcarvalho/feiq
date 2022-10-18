@@ -21,7 +21,7 @@ const ActiveCard = ({ children, link }: ActiveProps) => {
   return (
     <a
       href={link}
-      className="block p-6 hover:bg-slate-700 hover:ease-in duration-300 lg:rounded-xl bg-slate-900 text-indigo-300 text-2xl"
+      className="block p-6 hover:bg-slate-700 hover:ease-in duration-300 lg:rounded-xl bg-slate-900 text-indigo-300 lg:text-2xl text-md"
     >
       {children}
     </a>
@@ -33,15 +33,15 @@ const Home: NextPage = () => {
     <div className="flex flex-col">
       <main className="flex flex-1 flex-col">
         <div className="bg-slate-900">
-          <div className="flex lg:w-[1024px] mx-auto my-12">
-            <h1 className="px-4 text-left font-title uppercase leading-12 font-black text-6xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-400">
+          <div className="flex lg:w-[1024px] mx-auto lg:my-12 my-4 lg:flex-nowrap flex-wrap lg:justify-start justify-center">
+            <h1 className="px-4 lg:text-left text-center font-title uppercase leading-12 font-black text-6xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-400">
               Front-End <br />
               Interview
               <br />
               Questions
             </h1>
 
-            <p className="pl-24 py-3 text-3xl italic text-indigo-100">
+            <p className="lg:pl-24 px-2 py-3 text-3xl italic text-indigo-100 text-center">
               Practice front-end interview questions with flash cards.
               <br />
               <br />
@@ -52,20 +52,20 @@ const Home: NextPage = () => {
 
         <div className="lg:w-[1024px] w-full mt-8 mx-auto grid grid-cols-2 gap-6">
           <ActiveCard link="/typescript">
-            <h2>TypeScript &rarr;</h2>
+            <h2 className="lg:text-3xl text-2xl">TypeScript &rarr;</h2>
             {/* <p>TypeScript interview questions</p> */}
           </ActiveCard>
 
           <Soon>
-            <h2>JavaScript - soon</h2>            
+            <h2 className="lg:text-3xl text-2xl">JavaScript - soon</h2>            
           </Soon>
 
           <Soon>
-            <h2>React - soon</h2>
+            <h2 className="lg:text-3xl text-2xl">React - soon</h2>
           </Soon>
 
           <Soon>
-            <h2>CSS & HTML - soon</h2>            
+            <h2 className="lg:text-3xl text-2xl">CSS & HTML - soon</h2>            
           </Soon>
         </div>
       </main>
