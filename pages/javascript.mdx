@@ -3,6 +3,103 @@ import PageLayout from "../layouts/PageLayout";
 
 # JavaScript
 
+## Promises
+
+<Question slug="2be9d922-a78a-4c8c-a54a-cf4dd4e4e69a">
+  <Title>What's the output?</Title>
+
+  ```js
+    setTimeout(function () {
+    console.log(1)
+    }, 0)
+    console.log(2)
+  ```
+  <Answer>
+    `2 1`. 
+
+    The code inside `setTimeout` is executed after the code in the main thread. Check the video [What the heck is the event loop](https://www.youtube.com/watch?v=8aGhZQkoFbQ).
+  </Answer>
+</Question>
+
+<Question slug="9c7fc6b9-6787-4d1f-a5e6-5d2763677e82">
+  <Title>What's the output?</Title>
+
+  ```ts
+const exec = (res) => setTimeout(() => res(), 0);
+
+const f1 = () => console.log(1);
+const f2 = () => console.log(2);
+
+const p = new Promise(exec);
+p.then(f1);
+
+f2();
+  ```
+  <Answer>
+    `2 1`.
+
+    To learn more check [Jake's Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/).
+  </Answer>
+</Question>
+
+<Question slug="25279773-5bc6-4933-a853-fc30947c212a">
+  <Title>What's the output?</Title>
+
+  ```ts
+const exec = (res) => setTimeout(() => res(), 0);
+
+const f1 = () => console.log(1);
+const f2 = () => console.log(2);
+
+const p = new Promise(exec);
+p.then(f1).then(f2);
+  ```
+  <Answer>
+`1 2`
+
+To learn more check [Jake's Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/).
+  </Answer>
+</Question>
+
+<Question slug="efbc5514-bc25-431b-8872-2337ad71cda4">
+  <Title>What's the output?</Title>
+
+  ```ts
+const exec = (res, rej) => {
+    if(typeof res === "function") res();
+    rej();
+});
+
+const f1 = () => console.log("ok");
+const f2 = () => console.log("nok");
+
+new Promise(exec).then(f1, f2)
+  ```
+  <Answer>
+`ok`
+
+After one of `res` or `rej` is called, the other function call cannot be called.
+  </Answer>
+</Question>
+
+
+<Question slug="68118a8b-923c-4133-98ac-0541a0491e1e">
+  <Title>What's the output?</Title>
+
+  ```ts
+const f = (ms) => new Promise((res) => setTimeout(res, ms));
+
+f(1000)
+  .then(() => console.log('hi'))
+  .then(() => f(2000))
+  .then(() => console.log('there'));
+  ```
+  <Answer>
+Waits 1s, shows "hi", waits 2 seconds, shows "there"
+  </Answer>
+</Question>
+
+
 
 
 export default ({ children }) => <PageLayout>{children}</PageLayout>;
